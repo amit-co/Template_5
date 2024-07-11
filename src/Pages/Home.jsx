@@ -1,47 +1,71 @@
 import { Suspense } from "react";
-import { AboutRestaurant } from "../Components/AboutRestaurant";
-import { Menus } from "../Components/Menus";
-import { Quote } from "../Components/Quote";
-import { RestaurantDetails } from "../Components/RestaurantDetails";
-import { Reservation } from "../Components/Reservation";
-import videoSrc from "../assets/VIDEOS/OXBO.mp4";
-import img from "/Textures/4523.png";
+import logo from "/New/Group 85.png";
+import img from "/New/Home.png";
+import img1 from "/New/facebook.png";
+import img2 from "/New/instagram.png";
+import img3 from "/New/twitter.png";
+import img4 from "/New/house.png";
+import img5 from "/New/contact.png";
+import img6 from "/New/gift.png";
+import img7 from "/New/hand-platter.png";
+import img8 from "/New/images.png";
+import img9 from "/New/info.png";
+import img10 from "/New/instagram.png";
+import img11 from "/New/map-pinned.png";
+import img12 from "/New/notebook-pen.png";
+import img13 from "/New/notepad-text.png";
+
 
 export default function Home() {
     return (
-        <div>
-            <div style={{ backgroundImage: `url(${img})` }} className="bg-repeat">
-                <div className="relative h-[45vh] sm:h-[60vh] md:h-[75vh] lg:h-[85vh] overflow-hidden bg-fixed mb-[5vh] mt-[11vh] sm:mt-[22vh] flex items-center justify-end ">
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        className="absolute w-full h-full object-cover transform translate-x-0 translate-y-0"
-                    >
-                        <source src={videoSrc} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <div className="absolute right-2 hidden lg:flex justify-end text-white max-w-xs sm:max-w-sm lg:max-w-md">
-                        <Reservation />
-                    </div>
-                    <button className="w-6/12 lg:hidden h-12 absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white text-lg font-semibold rounded transition duration-300 hover:bg-orange-600">
-                        Find a Table
-                    </button>
-                </div>
+        <div className="flex bg-cover " style={{ backgroundImage: `url(${img})` }}>
+           
+            
+                        <img src={logo} className="w-[239px] h-[69px] mt-4 ml-4" />
+                   
+            <div className=" flex flex-col items-center text-customWhite  ml-44 mt-20  ">
+                        <h1 className="text-3xl tracking-widest">Welcome To </h1>
+                        <h1 className="text-5xl tracking-widest mb-4"> Fish N Dine</h1>
+                        <p className="tracking-widest">Our Aim Is To Provide A Welcoming All-Day Experience </p>
+                        <p className="tracking-widest">Rooted In Care For Our Customers, Staff , Produce And Land.</p>
+                        <h1 className="tracking-widest text-3xl underline underline-offset-8 mt-4">Opening Time</h1>
+                        <p className="tracking-widest text-xl mt-4">Monday To Friday</p>
+                        <p className="tracking-widest text-xl">12Pm - 10Pm</p>
+                        <p className="tracking-widest text-xl">Saturday & Sunday</p>
+                        <p className="tracking-widest text-xl">2Pm - 12Am</p>
+                        <button className="tracking-widest text-xl border px-4 py-2 mt-4">Find A Table</button>
+                        <h1 className="tracking-widest text-3xl underline underline-offset-8 mt-4">Address</h1>
+                        <p className="tracking-widest text-xl">Terminal Four Hounslow</p>
+                        <p className="tracking-widest text-xl">TW6 3AF</p>
+                        <p className="tracking-widest text-xl ">United Kingdom</p>
+                        <p className="tracking-widest text-xl mt-4">TEL - +44 (0) 208759 7755</p>
+                        <p className="tracking-widest text-xl">EMAIL - franky.rodrigues@hilton.com</p>
+                        <div className="flex flex-row object-contain space-x-2">
+                                <img src={img1} />
+                                <img src={img2} />
+                                <img src={img3} />
+                        </div>
+                        <h1 className="tracking-widest text-xl mt-4">Powered By</h1>
+            </div>
+                 <div className="flex flex-row  space-x-6">
+                <img src={img4} className="w-[29px] h-[29px] object-contain" />
+                <img src={img5} className="w-[29px] h-[29px] object-contain"/>
+                <img src={img6} className="w-[29px] h-[29px] object-contain"/>
+                <img src={img7} className="w-[29px] h-[29px] object-contain"/>
+                <img src={img8} className="w-[29px] h-[29px] object-contain"/>
+                <img src={img9} className="w-[29px] h-[29px] object-contain"/>
+                <img src={img10} className="w-[29px] h-[29px] object-contain"/>
+                <img src={img11} className="w-[29px] h-[29px] object-contain"/>
+                <img src={img12} className="w-[29px] h-[29px] object-contain"/>
+                <img src={img13} className="w-[29px] h-[29px] object-contain"/>
+            </div>
 
                 <Suspense fallback={<h1>Loading...</h1>}>
                     {/* Suspended components can be added here */}
                 </Suspense>
 
-                <div >
-                    <RestaurantDetails />
-                    <Menus />
-                    <div className="mb-10">
-                        <AboutRestaurant />
-                    </div>
-                    <Quote />
-                </div>
-            </div>
+               
+            
         </div>
    );
 }
