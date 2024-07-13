@@ -22,6 +22,7 @@ export default {
                 customWhite: "#F4F4F4",
                 customBeige: "#E6DDD8",
                 customTeal: "#6c7c6c",
+                customYellow: "#D1AE84"
             },
             screens: {
                 mediumLarge: "1080px",
