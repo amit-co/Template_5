@@ -22,7 +22,8 @@ import Drinks from "./Pages/Drinks";
 import { Footer } from "./Components/Footer";
 import Menu from "./Pages/Menu";
 import Venue from "./Pages/Venue";
-import Refund from "./Pages/Refund";
+import Refund from "./Pages/Refund"; 
+import Modal from "./Components/Modal";
 
 function App() {
     return (
@@ -45,6 +46,7 @@ function InnerApp() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/bookNow" element={<BookNow />} />
+                <Route path="/modal" element={<Modal />} />
                 <Route path="/menu" element={<Suspense fallback={<h1>Loading...</h1>}><Menu /></Suspense>} />
                 <Route path="/privateDinning" element={<Suspense fallback={<h1>Loading...</h1>}><PrivateDinning /></Suspense>} />
                 <Route path="/venue" element={<Suspense fallback={<h1>Loading...</h1>}><Venue /></Suspense>} />
