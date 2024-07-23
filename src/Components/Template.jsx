@@ -1,5 +1,5 @@
 import { useState } from "react";
-import img from "/buttons/Frame 29.png";
+
 
 export default function Template({ images, Heading }) {
     const [selectedImageIndex, setSelectedImageIndex] = useState(null);

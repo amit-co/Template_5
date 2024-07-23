@@ -1,44 +1,27 @@
-import PropTypes from 'prop-types';
-import img from "/Venues/venue.jpg"
-import VenueTemplate from '../Components/VenueTemplate';
+import { useNavigate } from "react-router-dom";
 export function Venue() {
-    let venueInfo = {
-        image: img,
-        button: {
-            link: "/gallery"
-        },
-        venueType: "Venue",
-        location: {
-            placeLine1: "Hilton London Heathrow Airport,",
-            placeLine2: "Terminal-4,Hounslow TW6 3AF,United Kingdom",
-            phone: "Phone: +44 (0) 208759 7755",
-            email: "Email: franky.rodrigues@hilton.com"
-        },
-        description: `OXBO Kitchen serves breakfast. OXBO Cafe offers tempting snacks any time, and OXBO Bar provides casual drinking and dining. Each outlet has a distinct menu and responsibly sourced dishes.`
+    const navigate = useNavigate();
+    function clickHandler() {
+        window.location.href = "https://reserve-ocean-website.vercel.app/restaurantDetail/Chon%20Thai%20Cuisine"
     }
-
     return (
-        <div>
-            <VenueTemplate venueInfo={venueInfo} />
-            
-        </div>
+        <>
+            <div className="flex flex-col  items-center mx-auto">
+                <h1 className="tracking-widest text-4xl underline underline-offset-8 mt-6">Venue</h1>
+                <p className="tracking-widest text-center text-lg w-7/12 mt-6">Fish N Dine Kitchen Serves Breakfast.
+                    Fish N Dine Cafe Offers Tempting Snacks Any Time.And Fish N Dine Bar Provides Casual Drinking And Dining.
+                    Each Outlet Has A Distinct Menu And Responsibly Sourced Dishes.
+                </p>
+                <h1 onClick={() => navigate('/venue/fndKitchen')} className="tracking-widest text-2xl underline mt-6 cursor-pointer">FND Kitchen</h1>
+                <h1 onClick={() => navigate('/venue/dineCafe')} className="tracking-widest text-2xl underline mt-6 cursor-pointer">Fish N Dine Cafe</h1>
+                <h1 onClick={() => navigate('/venue/dineBar')} className="tracking-widest text-2xl underline mt-6 cursor-pointer">Dine Bar</h1>
+                <h1 onClick={() => navigate('/venue/ird')} className="tracking-widest text-2xl underline mt-6 cursor-pointer">In Room Dining</h1>
+                <button onClick={clickHandler} className="tracking-widest text-xl border px-4 py-2 mt-6">Find A Table</button>
+            </div>
+        </>
     );
 }
-VenueTemplate.propTypes = {
-    venueInfo: PropTypes.shape({
-        image: PropTypes.string.isRequired,
-        button: PropTypes.object.isRequired,
-        link: PropTypes.string.isRequired,
-        venueType: PropTypes.string.isRequired,
-        location: PropTypes.shape({
-            placeLine1: PropTypes.string.isRequired,
-            placeLine2: PropTypes.string.isRequired,
-            phone: PropTypes.string.isRequired,
-            email: PropTypes.string.isRequired,
-        }).isRequired,
-        description: PropTypes.string.isRequired,
-    }).isRequired,
-};
 
 
-export default Venue
+
+export default Venue;

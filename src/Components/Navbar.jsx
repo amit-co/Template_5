@@ -8,25 +8,39 @@ import venue from "/New/map-pinned.svg";
 import booknow from "/New/notebook-pen.svg";
 import menu from "/New/notepad-text.svg";
 import { useState } from 'react';
+import PrivateDinning from "../Pages/PrivatedDinning";
+import BookNow from "../Pages/BookNow";
+import Venue from "../Pages/Venue";
+import About from "../Pages/About";
+import Contact from "../Pages/Contact";
+import Menu from "../Pages/Menu";
+import GiftVoucher from "../Pages/GiftVoucher";
+import Gallery from "../Pages/Gallery";
+import HomeContent from "../Pages/HomeContent";
+import { Link } from 'react-router-dom';
+
+
+
 
 export function Navbar({ onIconClick }) {
     const images = [
-        { src: home, alt: "Home", path: "/home", content: 'Gift Voucher Content'  },
-        { src: giftvoucher, alt: "Gift Voucher", path: "/giftVoucher", content: 'Gift Voucher Content' },
-        { src: privatedining, alt: "Private Dining", path: "/privateDinning", content: 'Private Dining Content' },
-        { src: gallery, alt: "Gallery", path: "/gallery", content: 'Gallery Content' },
-        { src: about, alt: "About", path: "/about", content: 'About Content' },
-        { src: contact, alt: "Contact", path: "/contact", content: 'Contact Content' },
-        { src: venue, alt: "Venue", path: "/venue", content: 'Venue Content' },
-        { src: booknow, alt: "Book Now", path: "/bookNow", content: 'Book Now Content' },
-        { src: menu, alt: "Menu", path: "/menu", content: 'Menu Content' },
+        { src: home, alt: "Home", path: "/homeContent", content: <HomeContent /> },
+        { src: giftvoucher, alt: "Gift Voucher", path: "/giftVoucher", content: <GiftVoucher /> },
+        { src: privatedining, alt: "Private Dining", path: "/privateDinning", content: <PrivateDinning /> },
+        { src: gallery, alt: "Gallery", path: "/gallery", content: <Gallery /> },
+        { src: about, alt: "About", path: "/about", content: <About /> },
+        { src: contact, alt: "Contact", path: "/contact", content: <Contact /> },
+        { src: venue, alt: "Venue", path: "/venue", content: <Venue /> },
+        { src: booknow, alt: "Book Now", path: "/bookNow", content: <BookNow /> },
+        { src: menu, alt: "Menu", path: "/menu", content: <Menu /> },
     ];
 
-    const [centeredIndex, setCenteredIndex] = useState(null); // Center is initially vacant
+    const [centeredIndex, setCenteredIndex] = useState(0); 
+    
 
-    const radius = 100; // Radius of the circle
-    const centerX = 150; // Center X position
-    const centerY = 150; // Center Y position
+    const radius = 100; 
+    const centerX = 150; 
+    const centerY = 150; 
 
     const handleIconClick = (index) => {
         setCenteredIndex(index === centeredIndex ? null : index);
@@ -37,14 +51,14 @@ export function Navbar({ onIconClick }) {
 
     return (
         <>
-            <div className={`fixed mt-8 right-10 z-10 transition-transform duration-300`}>
+            <div className={`fixed  right-10 z-10 transition-transform duration-300`}>
                 <div className="w-[300px] h-[300px] mx-auto rounded-full relative">
                     {centeredIndex !== null && (
                         <>
                             <img
                                 src={images[centeredIndex].src}
                                 onClick={() => handleIconClick(centeredIndex)}
-                                className="absolute object-contain cursor-pointer transition-transform  duration-300"
+                                className="absolute object-contain cursor-pointer transition-transform duration-300"
                                 style={{
                                     left: `calc(50% - 25px)`,
                                     top: `calc(50% - 25px)`,
@@ -67,10 +81,11 @@ export function Navbar({ onIconClick }) {
                             const x = centerX + radius * Math.cos(angle) - 14.5; // 14.5 is half the image width to center it
                             const y = centerY + radius * Math.sin(angle) - 14.5; // 14.5 is half the image height to center it
                             return (
-                                <img
+                                <Link key={index} to={image.path} onClick={() => handleIconClick(index)}>
+                               <img
                                     key={index}
                                     src={image.src}
-                                    onClick={() => handleIconClick(index)}
+                                    
                                     className="absolute object-contain cursor-pointer transition-transform duration-300"
                                     style={{
                                         left: `${x}px`,
@@ -80,6 +95,7 @@ export function Navbar({ onIconClick }) {
                                     }}
                                     alt={image.alt}
                                 />
+                                </Link>
                             );
                         }
                         return null;
