@@ -22,7 +22,7 @@ import Food from "./Pages/Food";
 import Drinks from "./Pages/Drinks";
 import Menu from "./Pages/Menu";
 import Venue from "./Pages/Venue";
-import Refund from "./Pages/Refund";
+
 import HomeContent from "./Pages/HomeContent";
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
                     <Route path="/venue/ird" element={<Suspense fallback={<h1>Loading...</h1>}><Home modalContent={<InRoomDining />} /></Suspense>} />
                     <Route path="/giftVoucher" element={<Suspense fallback={<h1>Loading...</h1>}><Home modalContent={<Gift />} /></Suspense>} />
                     <Route path="/contact" element={<Suspense fallback={<h1>Loading...</h1>}><Home modalContent={<Contact />} /></Suspense>} />
-                    <Route path="/refund" element={<Suspense fallback={<h1>Loading...</h1>}><Refund /></Suspense>} />
+                   
                     <Route path="/gallery" element={<Suspense fallback={<h1>Loading...</h1>}><Home modalContent={<Gallery />} /></Suspense>} />
                     <Route path="/gallery/food" element={<Suspense fallback={<h1>Loading...</h1>}><Home modalContent={<Food />} /></Suspense>} />
                     <Route path="/gallery/drinks" element={<Suspense fallback={<h1>Loading...</h1>}><Home modalContent={<Drinks />} /></Suspense>} />
