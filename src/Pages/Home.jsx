@@ -14,7 +14,7 @@ export default function Home({ modalContent }) {
             <img src={logo} className="fixed w-[239px] h-[69px] mt-4 ml-4" alt="Logo" />
             
             
-            <div className="flex flex-col items-center text-customWhite mx-auto mt-20">
+            <div className="flex flex-col items-center text-customWhite mx-auto md:mt-16 mt-80">
                 <h1 className="text-3xl tracking-widest">Welcome To </h1>
                 <h1 className="text-5xl tracking-widest  mt-4">Fish N Dine</h1>
 

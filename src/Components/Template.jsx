@@ -1,9 +1,12 @@
 import { useState } from "react";
+import back from "/New/BackButton.svg";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Template({ images, Heading }) {
+    const navigate = useNavigate();
     const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-    const [visibleImagesCount, setVisibleImagesCount] = useState(8);
+    const [visibleImagesCount, setVisibleImagesCount] = useState(6);
 
     const handleImageClick = (index) => {
         setSelectedImageIndex(index);
@@ -27,10 +30,20 @@ export default function Template({ images, Heading }) {
 
     return (
         <>
-            <div className="w-fit mx-auto mt-[18vh] sm:mt-[32vh]">
-                <h1 className="text-center font-bold tracking-widest text-Black text-6xl mb-2 ">{Heading}</h1>
-              
-            </div>
+            <div className="flex flex-col  items-center   mt-4">
+                <div className="flex flex-row w-full mt-6 ">
+                    <button
+                        className="self-start mr-56"
+                        onClick={() => navigate('/gallery')}
+                    >
+                        <img src={back} alt="backward" />
+                    </button>
+                   
+                    <h1 className="tracking-widest text-4xl  underline underline-offset-8 mr-72">Gallery</h1>
+              </div>
+                <h1 className="text-center  tracking-widest text-Black text-3xl mb-2 mt-4 ">{Heading}</h1>
+              </div>
+            
             <div className="h-[4px] bg-gradient-to-r from-transparent via-gray-600  to-transparent my-4 "></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 mx-auto p-5">
                 {images.slice(0, visibleImagesCount).map((image, index) => (
@@ -38,7 +51,7 @@ export default function Template({ images, Heading }) {
                         <img
                             src={image}
                             alt={`gallery ${index + 1}`}
-                            className="cursor-pointer w-full h-full object-cover rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                            className="cursor-pointer w-8/12 h-44 ml-10 object-cover rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
                             onClick={() => handleImageClick(index)}
                         />
                     </div>
@@ -48,7 +61,7 @@ export default function Template({ images, Heading }) {
                 <div className="text-center mt-6">
                     <button
                         onClick={handleLoadMore}
-                        className="text-customWhite text-lg mt-5  tracking-widest rounded-lg w-fit px-8 py-2 font-semibold bg-customBrown2 transition-all cursor-pointer duration-300 hover:bg-black"
+                        className="text-customWhite text-lg mt-5  tracking-widest rounded-lg w-fit px-8 py-2 text-xl  border transition-all cursor-pointer duration-300 hover:bg-black"
                     >
                         Load More
                     </button>
@@ -78,7 +91,8 @@ export default function Template({ images, Heading }) {
                             &#10095;
                         </button>
                     </div>
-                </div>
+                    </div>
+                
             )}
         </>
     );

@@ -1,5 +1,6 @@
 import back from "/New/BackButton.svg";
 import { useNavigate } from 'react-router-dom';
+
 export function FndKitchen() {
     const navigate = useNavigate();
     function clickHandler() {

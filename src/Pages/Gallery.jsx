@@ -18,7 +18,7 @@ export default function gallery() {
                             </div>
                         </div>
                         <div className="flex flex-col w-full h-full" >
-                            <img src={beverage} />
+                            <img onClick={() => navigate('/gallery/drinks')} src={beverage} />
                             <div className="-mt-10 ">
                                 <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] text-center py-3">Beverage</h1>
                             </div>
@@ -26,7 +26,7 @@ export default function gallery() {
                     </div>
                     <div className="flex ">
                         <div className="flex flex-col" >
-                            <img src={team} />
+                            <img onClick={() => navigate('/gallery/teams')} src={team} />
                             <div className="-mt-10 ">
                                 <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] text-center py-3">Team</h1>
                             </div>
