@@ -28,7 +28,7 @@ export default function gallery() {
                         <div className="flex flex-col" >
                             <img onClick={() => navigate('/gallery/teams')} src={team} />
                             <div className="-mt-10 ">
-                                <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] text-center py-3">Team</h1>
+                                <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] mb-4 text-center py-3">Team</h1>
                             </div>
                         </div>
                     </div>

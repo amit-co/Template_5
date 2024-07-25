@@ -6,9 +6,9 @@ export default function Gift() {
     return (
         <>
             <div className="flex flex-col  items-center mx-auto">
-                <h1 className="tracking-widest text-5xl underline underline-offset-8 mt-8">Gift Voucher</h1>
+                <h1 className="tracking-widest text-3xl md:text-5xl underline underline-offset-8 mt-8">Gift Voucher</h1>
                 <img src={voucher} className="mt-4" />
-                <p className="tracking-widest text-center text-xl w-4/12 mt-8">Give The Ultimate Gift To SomeoneSpecial With Fish N Dine Experience.
+                <p className="tracking-widest text-center text-base md:text-xl w-11/12 md:w-4/12 mt-4 md:mt-8">Give The Ultimate Gift To SomeoneSpecial With Fish N Dine Experience.
                 This Voucher Is Valid 48 Hours After Purchase, For 12 Months.
                 </p>
                 <Discount />

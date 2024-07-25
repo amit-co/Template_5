@@ -81,10 +81,10 @@ export default function Contact() {
     return (
         <>
             <div className="flex flex-col  items-center mx-auto">
-                <h1 className="tracking-widest text-5xl underline underline-offset-8 mt-8">Contact Us</h1>
-                <div className="flex w-[600px] bg-customYellow bg-opacity-50 mt-6 rounded-lg p-10">
-                        <form className="flex flex-col space-y-6 ">
-                    <div className="flex space-x-16 w-full">
+                <h1 className="tracking-widest text-3xl md:text-5xl underline underline-offset-8 mt-8">Contact Us</h1>
+                <div className="flex w-[300px] md:w-[600px] bg-customYellow bg-opacity-50 mt-6 rounded-lg p-10">
+                        <form className="flex flex-col space-y-10 md:space-y-6 ">
+                    <div className="flex space-x-3 md:space-x-16 w-full">
                               <div>
                                 <label className="text-customWhite">First Name </label>
                                     <input
@@ -93,7 +93,7 @@ export default function Contact() {
                                         value={formData.fname}
                                         id="fname"
                                         name="fname"
-                                    className="text-black w-56 px-3 py-2 rounded-lg"
+                                    className="text-black w-24 md:w-56 px-3 py-2 rounded-lg"
                                     />
                                     {errors.name && <h1 className="text-red-500 text-sm">{errors.name}</h1>}
                               </div>
@@ -105,11 +105,11 @@ export default function Contact() {
                                         value={formData.lname}
                                         id="lname"
                                         name="lname"
-                                    className="text-black w-56 px-3 py-2 rounded-lg"
+                                    className="text-black w-24 md:w-56 px-3 py-2 rounded-lg"
                                     />
                               </div>
                      </div>
-                        <div className="flex  space-x-16 w-full ">
+                        <div className="flex  space-x-5 md:space-x-16 w-full ">
                                 <div >
                                 <label className="text-customWhite">Email ID</label>
                                     <input
@@ -118,19 +118,20 @@ export default function Contact() {
                                         value={formData.email}
                                         name="email"
                                         onChange={changeHandler}
-                                    className="text-black w-56 px-3 py-2 rounded-lg"
+                                    className="text-black w-24 md:w-56 px-3 py-2 rounded-lg"
                                     />
                                     {errors.email && <h1 className="text-red-500 text-sm">{errors.email}</h1>}
                                 </div>
                         <div >
-                                <label className="text-customWhite">Contact Number</label>
+                                <label className="hidden md:block text-customWhite">Contact Number</label>
+                                <label className="block md:hidden text-customWhite">Contact No.</label>
                                     <input
                                         type="text"
                                         onChange={changeHandler}
                                         value={formData.contact}
                                         id="contact"
                                         name="contact"
-                                    className="text-black w-56 px-3 py-2 rounded-lg"
+                                    className="text-black w-24 md:w-56 px-3 py-2 rounded-lg"
                                     />
                                 </div>
                             </div>
@@ -140,7 +141,7 @@ export default function Contact() {
                                         Message
                                     </label>
                                     <textarea
-                                    className="text-black w-[510px] rounded-lg"
+                                    className="text-black w-[220px] md:w-[510px] rounded-lg"
                                         onChange={changeHandler}
                                         name="message"
                                         value={formData.message}

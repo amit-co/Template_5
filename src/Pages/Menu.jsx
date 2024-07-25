@@ -21,19 +21,19 @@ export default function Menu() {
 
     return (
         <div className="flex flex-col  items-center mx-auto">
-            <h1 className="tracking-widest text-4xl  underline underline-offset-8 mt-8">Feeling Hungry ?</h1>
+            <h1 className="tracking-widest text-3xl md:text-4xl  underline underline-offset-8 mt-8">Feeling Hungry ?</h1>
               <div className="w-full mt-10 flex flex-col items-center space-y-10">
                     <div className="flex  justify-center space-x-20 ">
                                     <div className="flex flex-col w-full h-full" onClick={() => handleMenuOpen(img5)}>
                                         <img src={breakfast} />
                                         <div className="-mt-10 ">
-                                            <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] text-center py-3">Breakfast Menu</h1>
+                                            <h1 className="bg-customBlack2 text-white text-xl md:text-2xl rounded-t-lg h-[60px] md:h-[50px] text-center py-1 md:py-3">Breakfast Menu</h1>
                                         </div>
                                     </div>
                                     <div className="flex flex-col w-full h-full" onClick={() => handleMenuOpen(barSnacks)}>
                                         <img src={barsnacks} />
                                         <div className="-mt-10 ">
-                                            <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] text-center py-3">Bar Snacks Menu</h1>
+                                            <h1 className="bg-customBlack2 text-white text-xl md:text-2xl rounded-t-lg h-[60px] md:h-[50px] text-center py-1 md:py-3">Bar Snacks Menu</h1>
                                         </div>
                                     </div>
                         
@@ -43,13 +43,13 @@ export default function Menu() {
                                   <div className="flex flex-col w-full h-full" onClick={() => handleMenuOpen(img4)}>
                                     <img src={cafe} />
                                     <div className="-mt-10 ">
-                                        <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] text-center py-3">Cafe Menu</h1>
+                                        <h1 className="bg-customBlack2 text-white text-xl md:text-2xl rounded-t-lg h-[50px] text-center py-3">Cafe Menu</h1>
                                     </div>
                                   </div>
                                 <div className="flex flex-col w-full h-full " onClick={() => handleMenuOpen(img3)}>
                                     <img src={Ird} />
                                     <div className="-mt-10 ">
-                                        <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] text-center py-3">IRD Menu</h1>
+                                        <h1 className="bg-customBlack2 text-white text-xl md:text-2xl rounded-t-lg h-[50px] text-center py-3">IRD Menu</h1>
                                     </div>
                                 </div>
                        
