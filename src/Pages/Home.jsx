@@ -1,47 +1,48 @@
-import { Suspense } from "react";
-import { AboutRestaurant } from "../Components/AboutRestaurant";
-import { Menus } from "../Components/Menus";
-import { Quote } from "../Components/Quote";
-import { RestaurantDetails } from "../Components/RestaurantDetails";
-import { Reservation } from "../Components/Reservation";
-import videoSrc from "../assets/VIDEOS/OXBO.mp4";
-import img from "/Textures/4523.png";
+import { Suspense } from 'react';
+import logo from "/New/Group 85.png";
+import img from "/New/Home.png";
+import img1 from "/New/facebook.png";
+import img2 from "/New/instagram.png";
+import img3 from "/New/twitter.png";
 
-export default function Home() {
+export default function Home({ modalContent }) {
+    
+
+
     return (
-        <div>
-            <div style={{ backgroundImage: `url(${img})` }} className="bg-repeat">
-                <div className="relative h-[45vh] sm:h-[60vh] md:h-[75vh] lg:h-[85vh] overflow-hidden bg-fixed mb-[5vh] mt-[11vh] sm:mt-[22vh] flex items-center justify-end ">
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        className="absolute w-full h-full object-cover transform translate-x-0 translate-y-0"
-                    >
-                        <source src={videoSrc} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <div className="absolute right-2 hidden lg:flex justify-end text-white max-w-xs sm:max-w-sm lg:max-w-md">
-                        <Reservation />
-                    </div>
-                    <button className="w-6/12 lg:hidden h-12 absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white text-lg font-semibold rounded transition duration-300 hover:bg-orange-600">
-                        Find a Table
-                    </button>
-                </div>
+        <div className="flex bg-cover relative min-h-screen bg-fixed bg-opacity-100" style={{ backgroundImage: `url(${img})` }}>
+            <img src={logo} className="fixed w-[239px] h-[69px] mt-4 ml-4" alt="Logo" />
+            
+            
+            <div className="flex flex-col items-center text-customWhite mx-auto md:mt-16 mt-80">
+                <h1 className="text-3xl tracking-widest">Welcome To </h1>
+                <h1 className="text-5xl tracking-widest  mt-4">Fish N Dine</h1>
 
-                <Suspense fallback={<h1>Loading...</h1>}>
-                    {/* Suspended components can be added here */}
-                </Suspense>
-
-                <div >
-                    <RestaurantDetails />
-                    <Menus />
-                    <div className="mb-10">
-                        <AboutRestaurant />
-                    </div>
-                    <Quote />
+            
+                {modalContent && (
+                    <div className="flex flex-col items-center mx-auto ">
+                        {modalContent}
+              </div>
+              )}
+                <h1 className="tracking-widest text-3xl underline underline-offset-8 mt-4">Address</h1>
+                <p className="tracking-widest text-xl">Terminal Four Hounslow</p>
+                <p className="tracking-widest text-xl">TW6 3AF</p>
+                <p className="tracking-widest text-xl">United Kingdom</p>
+                <p className="tracking-widest text-xl mt-4">TEL - +44 (0) 208759 7755</p>
+                <p className="tracking-widest text-xl">EMAIL - franky.rodrigues@hilton.com</p>
+                <div className="flex flex-row object-contain space-x-2">
+                    <img src={img1} alt="Facebook" />
+                    <img src={img2} alt="Instagram" />
+                    <img src={img3} alt="Twitter" />
                 </div>
+                <h1 className="tracking-widest text-xl mt-4">Powered By</h1>
+                <img src={logo} className="w-[230px] h-[50px] mt-4 ml-4" alt="Powered By Logo" />
             </div>
+
+           
+            <Suspense fallback={<h1>Loading...</h1>}>
+                {/* Suspended components can be added here */}
+            </Suspense>
         </div>
-   );
+    );
 }

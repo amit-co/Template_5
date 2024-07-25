@@ -70,14 +70,9 @@ export default function VenueTemplate({ venueInfo }) {
                                           </h2>
                                           <p className="font-medium text-2xl">{venueInfo.description}</p>
                               </div>
-              <div className="w-fit mx-auto">
-                  <button
-                      onClick={clickHandler}
-                      className="text-customWhite text-lg mt-5 mb-5 tracking-widest rounded-lg w-fit px-8 py-2 font-semibold bg-customBrown2 transition-all cursor-pointer duration-300 hover:bg-black"
-                       >
-                      Find A Table
-                  </button>
-                              </div>
+              
+                  <button onClick={clickHandler} className="tracking-widest text-xl border px-4 py-2 mt-6">Find A Table</button>
+                              
               </div>
       
         </>

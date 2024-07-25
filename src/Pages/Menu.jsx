@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
-import img from "/FoodImages/Food11.jpeg";
-import img1 from "/Textures/4525.png";
-import img2 from "/Pdf/CafeKitchen.jpg";
+import { useState } from 'react';
 import img3 from "/Pdf/IRD-Menu.jpg";
 import img4 from "/Pdf/CafeMenu.jpg";
 import img5 from "/FoodImages/BreakfastMenu.jpg";
 import barSnacks from "/FoodImages/BarSnacks.jpg";
-import { Reserve } from "../Components/Reserve";
-import barsnacks from "/Menu/Group 15.png";
-import  Ird from "/Menu/Group 16.png";
-import breakfast from "/Menu/Group 17.png";
-import kitchen from "/Menu/Group 18.png";
-import cafe from "/Menu/Group 19.png";
+import barsnacks from "/New/Bar.svg";
+import  Ird from "/New/IRD.svg";
+import breakfast from "/New/Breakfast.svg";
+import cafe from "/New/Cafe.svg";
 
 export default function Menu() {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -25,33 +20,43 @@ export default function Menu() {
     };
 
     return (
-        <div className="bg-repeat" style={{ backgroundImage: `url(${img1})` }}>
-            <div
-                className="bg-fixed sm:flex py-24 bg-cover"
-                style={{ backgroundImage: `url(${img})` }}
-            >
-                <div className="w-full mt-32">
-                    <div className="flex flex-wrap justify-center gap-5 mb-12">
-                        <div className="flex bg-customBeige rounded-lg w-64 md:w-80 lg:w-[400px] p-4" onClick={() => handleMenuOpen(barSnacks)}>
-                            <img src={barsnacks}  />
-                        </div>
-                        <div className="flex bg-customBeige rounded-lg w-64 md:w-80 lg:w-[400px] p-4" onClick={() => handleMenuOpen(img2)}>
-                            <img src={kitchen} />
-                        </div>
-                            <div className="flex bg-customBeige rounded-lg w-64 md:w-80 lg:w-[400px] p-4" onClick={() => handleMenuOpen(img3)}>
-                                <img src={Ird} />
-                        </div>
+        <div className="flex flex-col  items-center mx-auto">
+            <h1 className="tracking-widest text-4xl  underline underline-offset-8 mt-8">Feeling Hungry ?</h1>
+              <div className="w-full mt-10 flex flex-col items-center space-y-10">
+                    <div className="flex  justify-center space-x-20 ">
+                                    <div className="flex flex-col w-full h-full" onClick={() => handleMenuOpen(img5)}>
+                                        <img src={breakfast} />
+                                        <div className="-mt-10 ">
+                                            <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] text-center py-3">Breakfast Menu</h1>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col w-full h-full" onClick={() => handleMenuOpen(barSnacks)}>
+                                        <img src={barsnacks} />
+                                        <div className="-mt-10 ">
+                                            <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] text-center py-3">Bar Snacks Menu</h1>
+                                        </div>
+                                    </div>
+                        
+                            
                     </div>
-                    <div className="flex flex-wrap justify-center gap-5">
-                        <div className="flex bg-customBeige rounded-lg w-64 md:w-80 lg:w-[400px] p-4" onClick={() => handleMenuOpen(img4)}>
-                            <img src={cafe}  />
-                        </div>
-                        <div className="flex bg-customBeige rounded-lg w-64 md:w-80 lg:w-[400px] p-4" onClick={() => handleMenuOpen(img5)}>
-                            <img src={breakfast}  />
-                        </div>
-                    </div>
+                    <div className="flex  justify-center space-x-20">
+                                  <div className="flex flex-col w-full h-full" onClick={() => handleMenuOpen(img4)}>
+                                    <img src={cafe} />
+                                    <div className="-mt-10 ">
+                                        <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] text-center py-3">Cafe Menu</h1>
+                                    </div>
+                                  </div>
+                                <div className="flex flex-col w-full h-full " onClick={() => handleMenuOpen(img3)}>
+                                    <img src={Ird} />
+                                    <div className="-mt-10 ">
+                                        <h1 className="bg-customBlack2 text-white text-2xl rounded-t-lg h-[50px] text-center py-3">IRD Menu</h1>
+                                    </div>
+                                </div>
+                       
                 </div>
-            </div>
+                <button className="tracking-widest text-2xl border px-4 py-2 ">Find A Table</button>
+              </div>
+            
             {selectedImage && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="relative">
@@ -65,9 +70,7 @@ export default function Menu() {
                     </div>
                 </div>
             )}
-            <div>
-                <Reserve />
-            </div>
+           
         </div>
     );
 }
