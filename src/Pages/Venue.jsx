@@ -8,7 +8,7 @@ export function Venue() {
         <>
             <div className="flex flex-col  items-center mx-auto">
                 <h1 className="tracking-widest text-4xl underline underline-offset-8 mt-6">Venue</h1>
-                <p className="tracking-widest text-center text-lg w-7/12 mt-6">Fish N Dine Kitchen Serves Breakfast.
+                <p className="tracking-widest text-center text-lg w-full md:w-7/12 mt-6">Fish N Dine Kitchen Serves Breakfast.
                     Fish N Dine Cafe Offers Tempting Snacks Any Time.And Fish N Dine Bar Provides Casual Drinking And Dining.
                     Each Outlet Has A Distinct Menu And Responsibly Sourced Dishes.
                 </p>

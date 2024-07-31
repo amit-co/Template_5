@@ -52,7 +52,7 @@ export function Navbar({ onIconClick }) {
     return (
         <>
             <div className={`fixed  right-10 z-10 transition-transform duration-300`}>
-                <div className="w-[300px] h-[300px] mt-10 md:mt-0 mx-auto rounded-full relative">
+                <div className="w-[300px] h-[300px] mt-16 md:mt-0 mx-auto rounded-full relative">
                     {centeredIndex !== null && (
                         <>
                             <img
